@@ -7,7 +7,7 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t new_node, i = 0, csize;
+	size_t new_node, i, csize;
 	int swap;
 
 	if (array == NULL || size <= 1)
@@ -16,7 +16,7 @@ void bubble_sort(int *array, size_t size)
 	while (csize > 0)
 	{
 		new_node = 0;
-		for (; i < csize - 1; i++)
+		for (i = 0; i < csize - 1; i++)
 		{
 			if (array[i] > array[i + 1])
 			{
