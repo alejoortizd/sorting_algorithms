@@ -6,19 +6,41 @@
  * @min: Start index of the sub-array. Inclusive.
  * @max: End index and pivot of the sub-array. Exclusive.
  * @size: Size of the full array.
- * Return: Index of the first value higher than @max.
+ * Return: Nothing.
  */
 
-size_t sub_qsort(int *array, size_t min, size_t max, size_t size)
+void sub_qsort(int *array, int min, int max, size_t size)
 {
 	int piv = array[max];
-	int lower = array[min];
+	int lower = min;
 	int tmp;
 	int i;
 
 	if (min < max)
 	{
-
+		for (i = min; i < max; i++)
+		{
+			if (array[i] < piv)
+			{
+				if (i != lower)
+				{
+					tmp = array[lower];
+					array[lower] = array[i];
+					array[i] = tmp;
+					print_array(array, size);
+				}
+				lower++;
+			}
+		}
+		if (lower != max)
+		{
+			tmp = piv;
+			array[max] = array[lower];
+			array[lower] = tmp;
+			print_array(array, size);
+		}
+		sub_qsort(array, min, lower - 1, size);
+		sub_qsort(array, lower + 1, max, size);
 	}
 }
 
@@ -33,26 +55,32 @@ void quick_sort(int *array, size_t size)
 {
 	int piv = array[size - 1];
 	int lower = 0;
+	int min = 0;
+	int max = size - 1;
 	int tmp;
 	int i;
 
-	for (i = 0; i < size - 1; i++)
+	for (i = min; i < max; i++)
 	{
 		if (array[i] < piv && i != lower)
 		{
-			tmp = array[lower];
-			array[lower] = array[i];
-			array[i] = tmp;
+			if (i != lower)
+			{
+				tmp = array[lower];
+				array[lower] = array[i];
+				array[i] = tmp;
+				print_array(array, size);
+			}
 			lower++;
-			print_array(array, size);
 		}
 	}
-	if (i != size - 1)
+	if (lower != max)
 	{
 		tmp = piv;
-		piv = array[i];
-		array[i] = tmp;
+		array[max] = array[lower];
+		array[lower] = tmp;
 		print_array(array, size);
 	}
-	sub_qsort(array, 0, lower - 1);
+	sub_qsort(array, min, lower - 1, size);
+	sub_qsort(array, lower + 1, max, size);
 }
