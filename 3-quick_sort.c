@@ -32,7 +32,7 @@ void sub_qsort(int *array, int min, int max, size_t size)
 				lower++;
 			}
 		}
-		if (lower != max)
+		if (lower != max && array[lower] != array[max])
 		{
 			tmp = piv;
 			array[max] = array[lower];
@@ -77,7 +77,7 @@ void quick_sort(int *array, size_t size)
 			lower++;
 		}
 	}
-	if (lower != max)
+	if (lower != max && array[lower] != array[max])
 	{
 		tmp = piv;
 		array[max] = array[lower];
