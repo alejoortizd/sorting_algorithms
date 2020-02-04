@@ -60,13 +60,12 @@ void quick_sort(int *array, size_t size)
 	int tmp;
 	int i;
 
-	if(!array || size <= 1)
+	if (!array || size <= 1)
 		return;
 	for (i = min; i < max; i++)
 	{
 		if (array[i] < piv)
 		{
-
 			if (i != lower)
 			{
 				tmp = array[lower];
