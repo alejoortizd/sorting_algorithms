@@ -58,7 +58,7 @@ void quick_sort(int *array, size_t size)
 	int min = 0;
 	int max = size - 1;
 	int tmp;
-	int i = lower - 1;
+	int i;
 
 	if(!array || size <= 1)
 		return;
@@ -66,7 +66,7 @@ void quick_sort(int *array, size_t size)
 	{
 		if (array[i] < piv)
 		{
-			i++;
+
 			if (i != lower)
 			{
 				tmp = array[lower];
