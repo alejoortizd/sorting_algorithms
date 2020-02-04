@@ -62,7 +62,7 @@ void quick_sort(int *array, size_t size)
 
 	for (i = min; i < max; i++)
 	{
-		if (array[i] < piv && i != lower)
+		if (array[i] < piv)
 		{
 			if (i != lower)
 			{
