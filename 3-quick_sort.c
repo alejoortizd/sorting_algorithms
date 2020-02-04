@@ -60,7 +60,11 @@ void quick_sort(int *array, size_t size)
 	int tmp;
 	int i;
 
+<<<<<<< HEAD
 	if (!array)
+=======
+	if (!array || size <= 1)
+>>>>>>> 3e067a3ae1da5e89f62d9db328976bdb60f097a7
 		return;
 	for (i = min; i < max; i++)
 	{

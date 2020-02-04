@@ -23,3 +23,7 @@ An introductory repository on:
 **[2-selection_sort.c](2-selection_sort.c)** - Funtion that use the algorithms insertion to sort a list.
 
 **[2-O](2-O)** - File with best, middle and worst case for the insertion_sort_list.
+
+**[3-quick_sort.c](3-quick_sort.c)** - Funtion that use the algorithms quick to sort a list
+
+**[3-O](3-O)** - File with best, middle and worst case for the quick_sort_list.
