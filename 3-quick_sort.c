@@ -53,19 +53,16 @@ void sub_qsort(int *array, int min, int max, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	int piv = array[size - 1];
+	int piv;
 	int lower = 0;
 	int min = 0;
 	int max = size - 1;
 	int tmp;
 	int i;
 
-<<<<<<< HEAD
-	if (!array)
-=======
-	if (!array || size <= 1)
->>>>>>> 3e067a3ae1da5e89f62d9db328976bdb60f097a7
+	if (array == NULL || size <= 1)
 		return;
+	piv = array[size - 1];
 	for (i = min; i < max; i++)
 	{
 		if (array[i] < piv)
